@@ -1,0 +1,27 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block link%}
+<link rel="stylesheet" type="text/css" href="{% static 'mine/css/addressDetail.css' %}" />
+{% endblock link%}
+{% block script %}
+<script type="text/javascript" charset="utf-8" src="{% static 'mine/js/addressDetail.js' %}"></script>
+{% endblock script %}
+{% block main %}
+    <div id="addressDetailDiv">
+        <div>
+            <div><span onclick="window.history.go(-1)" style="background-color: red">返回</span></div>
+            <ul>
+            {% for item in address %}
+                <li>
+                <div><span>{{ item.name }}</span><span>{{ item.phoneNum }}</span></div>
+                <div>{{ item.address }}</div>
+                <button href="#">修改地址</button>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+        <div id="add">
+            <div><a href="/addaddress/">新增地址</a></div>
+        </div>
+    </div>
+{% endblock main %}

@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,maximum-scale=1, user-scalable=no" />
+    <title>商品详情</title>
+    <link rel="stylesheet" type="text/css" href="{% static "base/css/bootstrap.min.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "base/css/reset.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "base/css/swiper.min.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "market/css/detail.css" %}" />
+    <script type="text/javascript" src="{% static "base/js/jquery-3.1.1.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "base/js/bootstrap.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "base/js/swiper.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "market/js/detail.js" %}"></script>
+</head>
+<body>
+    <header>
+        <span id="return">&lt;</span>
+    {{ products.longName }}
+    </header>
+    <div><img src="{{ products.img }}"></div>
+    <div>
+        <div><p>{{ products.longName }}</p></div>
+        <div><span>￥{{ products.price }}</span></div>
+    </div>
+    <div>
+        <div>商品详情</div>
+        <div>
+            <span>品&nbsp;&nbsp;牌</span>
+            <span>{{ products.brandName }}</span>
+        </div>
+        <div>
+            <span>产品规格</span>
+            <span>{{ products.specifics }}</span>
+        </div>
+        <div>
+            <span>保质期限</span>
+            <span>{{ products.safeDay }}{{ products.safeUnitDesc }}</span>
+        </div>
+
+    </div>
+    <footer>
+    <h1>购物车</h1>
+    </footer>
+</body>
+</html>
