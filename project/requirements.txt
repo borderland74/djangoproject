@@ -2,3 +2,4 @@ django==1.11.4
 pymysql
 add2
 add3
+book
